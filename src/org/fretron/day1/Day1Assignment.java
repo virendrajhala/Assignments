@@ -88,16 +88,19 @@ import java.util.*;
             // execute till low is less than high
             while(low < high){
 
+                // if sum found then print and move both pointers closer to each other
                 if(arr[low] + arr[high] == target){
                     System.out.println(arr[low]+","+arr[high]);
                     low++;
                     high--;
                 }
 
+                // if sum < target then move low ahead by one to get higher value in sum
                 else if(arr[low] + arr[high] < target){
                     low++;
                 }
 
+                // if sum > target then move high backwards to get lesser value of sum
                 else{
                     high--;
                 }
