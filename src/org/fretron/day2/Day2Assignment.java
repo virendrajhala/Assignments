@@ -36,6 +36,7 @@ class ApplesShare{
         int sum = 0;
 
         // get the total sum of weights
+        // T.C : O(n)
         while(i.hasNext()){
             sum = sum + (Integer)i.next();
         }
@@ -56,8 +57,11 @@ class ApplesShare{
         String rahimsApples = "Rahim : ";
 
         // sort arraylist in descending order
+        // T.C : O(nlogn)
         Collections.sort(apples,new MyComparator());
 
+        // traverse through arraylist to scan each element for the sum
+        // T.C : O(n)
         for(int j=0;j<apples.size();j++){
 
             int appleWeight = apples.get(j);
