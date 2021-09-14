@@ -29,7 +29,10 @@ class ApplesShare{
     public static void distributeApples() {
 
         // get input from user in apples arraylist through handleInput() method
-        ArrayList<Integer> apples = handleInput();
+        ArrayList<Integer> appleWeights = handleInput();
+
+        // make new arraylist to preserve the original one (appleWeights)
+        ArrayList<Integer> apples = new ArrayList<>(appleWeights);
 
         // get iterator object to traverse in arraylist
         Iterator i = apples.iterator();
