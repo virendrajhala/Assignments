@@ -55,9 +55,14 @@ class ApplesShare{
         int rahimsApplesSum = 0;
 
         // declare strings to store output
-        String ramsApples = "Ram : ";
-        String shamsApples = "Sham : ";
-        String rahimsApples = "Rahim : ";
+        String ramsApples = "";
+        String shamsApples = "";
+        String rahimsApples = "";
+
+        // declare lists for each person to store their apple weights
+        ArrayList<Integer> ramsAppleList = new ArrayList<>();
+        ArrayList<Integer> shamsAppleList = new ArrayList<>();
+        ArrayList<Integer> rahimsAppleList = new ArrayList<>();
 
         // sort arraylist in descending order
         // T.C : O(nlogn)
@@ -69,66 +74,50 @@ class ApplesShare{
 
             int appleWeight = apples.get(j);
 
-            // if appleWeight == -1 then it has already been used so skip the iteration
-            if(appleWeight == -1)
-                continue;
-
             // if incoming weight's addition lies within max share of Ram
             if(ramsApplesSum + appleWeight <= ramsMaxShare){
                 ramsApplesSum += appleWeight;
 
-                // if string is not having any value already then directly add
-                if(ramsApples.equals("Ram : "))
-                ramsApples = ramsApples + appleWeight;
-
-
-                // otherwise add with comma in between
-                else
-                    ramsApples = ramsApples + ", "+appleWeight;
-
-                // set used weight element to -1
-                apples.set(j,-1);
+                // add apple weights to the ram's list of apple weights
+                ramsAppleList.add(appleWeight);
             }
 
             // if incoming weight's addition lies within max share of Sham
             else if(shamsApplesSum + appleWeight <= shamsMaxShare){
                 shamsApplesSum += appleWeight;
 
-                // if string is not having any value already then directly add
-                if(shamsApples.equals("Sham : "))
-                    shamsApples = shamsApples + appleWeight;
-
-
-                // otherwise add with comma in between
-                else
-                    shamsApples = shamsApples + ", "+appleWeight;
-
-                // set used weight element to -1
-                apples.set(j,-1);
+                // add apple weights to the sham's list of apple weights
+                shamsAppleList.add(appleWeight);
             }
 
             // if incoming weight's addition lies within max share of Rahim
             else if(rahimsApplesSum + appleWeight <= rahimsMaxShare){
                 rahimsApplesSum += appleWeight;
 
-                // if string is not having any value already then directly add
-                if(rahimsApples.equals("Rahim : "))
-                    rahimsApples = rahimsApples + appleWeight;
-
-
-                // otherwise add with comma in between
-                else
-                    rahimsApples = rahimsApples + ", "+appleWeight;
-
-                // set used weight element to -1
-                apples.set(j,-1);
+                // add apple weights to the rahim's list of apple weights
+                rahimsAppleList.add(appleWeight);
             }
         }
 
         // print the output
-        System.out.println(ramsApples);
-        System.out.println(shamsApples);
-        System.out.println(rahimsApples);
+        System.out.print("Ram : ");
+        for(int j=0; j<ramsAppleList.size();j++){
+            System.out.print(ramsAppleList.get(j)+", ");
+        }
+
+        System.out.println();
+
+        System.out.print("Sham : ");
+        for(int j=0; j<shamsAppleList.size();j++){
+            System.out.print(shamsAppleList.get(j)+", ");
+        }
+
+        System.out.println();
+
+        System.out.print("Rahim : ");
+        for(int j=0; j<rahimsAppleList.size();j++){
+            System.out.print(rahimsAppleList.get(j)+", ");
+        }
 
     }
 
