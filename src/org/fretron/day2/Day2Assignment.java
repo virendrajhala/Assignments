@@ -100,24 +100,21 @@ class ApplesShare{
         }
 
         // print the output
-        System.out.print("Ram : ");
-        for(int j=0; j<ramsAppleList.size();j++){
-            System.out.print(ramsAppleList.get(j)+", ");
-        }
 
-        System.out.println();
+         String ramsAppleWeights = ramsAppleList.toString();
+         ramsAppleWeights = String.join(",",ramsAppleWeights);
 
-        System.out.print("Sham : ");
-        for(int j=0; j<shamsAppleList.size();j++){
-            System.out.print(shamsAppleList.get(j)+", ");
-        }
+         System.out.println("Ram : "+ramsAppleWeights);
 
-        System.out.println();
+        String shamsAppleWeights = shamsAppleList.toString();
+        shamsAppleWeights = String.join(",",shamsAppleWeights);
 
-        System.out.print("Rahim : ");
-        for(int j=0; j<rahimsAppleList.size();j++){
-            System.out.print(rahimsAppleList.get(j)+", ");
-        }
+        System.out.println("Sham : "+shamsAppleWeights);
+
+        String rahimsAppleWeights = rahimsAppleList.toString();
+        rahimsAppleWeights = String.join(",",rahimsAppleWeights);
+
+        System.out.println("Rahim : "+ramsAppleWeights);
 
     }
 
